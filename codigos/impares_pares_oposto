@@ -1,0 +1,56 @@
+Algoritmo "atividade de vetores"
+
+Var
+v1: vetor[1..100] de inteiro
+vp, vi: vetor[1..100] de inteiro
+inverso: vetor[1..100] de inteiro
+c, maior, menor: inteiro
+
+Inicio
+//Mostrar menor e maior número/colher os valores pares e impares
+menor <- 10000
+maior <- 0
+para c de 1 ate 100 faca
+   escreval ("digite um valor: ")
+   leia (v1[c])
+   se (v1[c] > maior) entao
+      maior <- v1[c]
+   senao
+     se (v1[c] < menor) entao
+        menor <- v1[c]
+     fimse
+   fimse
+vp[c] <- v1[c]
+vi[c] <- v1[c]
+fimpara
+
+escreval("==========")
+escreval("RESULTADOS")
+escreval("==========")
+escreval("")
+
+//Exibir números pares
+escreval("O maior valor é: ", maior)
+escreval("O menor valor é: ", menor)
+escreval("")
+
+//testar e exibir números ímpares e números pares
+para c de 1 ate 100 faca
+  se vp[c] mod 2 = 0 entao
+    escreval(vp[c], " <- número par")
+  senao
+    escreval(vi[c], " <- número ímpar")
+  fimse
+fimpara
+escreval("")
+
+//Algoritmo para fazer o vetor inverso
+escreval("---VETOR INVERSO--- ")
+escreval("")
+para c de 100 ate 1 passo -1 faca
+  inverso[c] <- v1[c]
+escreval(inverso[c])
+fimpara
+
+Fimalgoritmo
+

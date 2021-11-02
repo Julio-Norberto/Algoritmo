@@ -1,0 +1,33 @@
+algoritmo "conceitos_finais"
+
+var
+   nome: caractere
+   nota: real
+   c: inteiro
+inicio
+   para c <- 1 ate 5 faca
+      escreval()
+      escreval("-----------------------")
+      escreval("   CONCEITOS FINAIS    ")
+      escreval("-----------------------")
+      escreva("Informe o nome do aluno: ")
+      leia (nome)
+      escreva("informe a media final do aluno: ")
+      leia (nota)
+      se (nota >= 9) e (nota <= 10) entao
+         escreva("Nota A!")
+      senao
+           se (nota <= 8.9) e (nota >= 7) entao
+              escreva("Nota B!")
+           senao
+                se (nota <= 6.9) e (nota >= 5) entao
+                   escreva("Nota C!")
+                senao
+                     se (nota <= 4.9) e (nota >= 0) entao
+                        escreva("Nota D!")
+                     fimse
+                fimse
+           fimse
+      fimse
+   fimpara
+fimalgoritmo

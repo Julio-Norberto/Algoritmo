@@ -1,0 +1,31 @@
+Algoritmo "vogais e consoantes"
+
+
+Var
+letras: vetor[1..50] de caractere
+c, totvog, totcons: inteiro
+perc: real
+
+Inicio
+//Algoritmo que guarda as letras nos vetores
+totvog <- 0
+totcons <- 0
+para c de 1 ate 50 faca
+   escreval("Digite uma letra: ")
+   leia(letras[c])
+
+//separa as vogais das consoantes
+   se (letras[c] = "a") ou (letras[c] = "e") ou (letras[c] = "i") ou (letras[c] = "o") ou (letras[c] = "u") entao
+      totvog <- totvog + 1
+   senao
+      totcons <- totcons + 1
+   fimse
+fimpara
+escreval("")
+
+perc <- (totcons * 100) / 50
+escreval("---RESULTADO---")
+escreval("O número de vogais dentro do vetor é de: ", totvog)
+escreval("E o percentual de consoantes é igual a: ", perc, "%")
+
+Fimalgoritmo

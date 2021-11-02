@@ -1,0 +1,37 @@
+algoritmo "semnome"
+
+var
+   pares, impares: vetor [0..100] de inteiro
+   c, totpar, totimpar, numeros: inteiro
+inicio
+   totpar <- 0
+   totimpar <- 0
+   para c <- 1 ate 100 faca
+     escreva("digite um número: ")
+     leia(numeros)
+     se (numeros % 2 = 0) entao
+        totpar <- totpar + 1
+        pares[totpar] <- numeros
+     senao
+        impares[totimpar] <- numeros
+        totimpar <- totimpar + 1
+     fimse
+   fimpara
+   limpatela
+   escreval("=========================================")
+   escreval("o número total de pares é de: ", totpar)
+   escreval("são eles: ")
+   escreval("=========================================")
+   para c <- 1 ate totpar faca
+      escreva(pares[c], ", ")
+   fimpara
+   escreval()
+   
+   escreval("==========================================")
+   escreval("o número total de impares é de: ", totimpar)
+   escreval("são eles: ")
+   escreval("==========================================")
+   para c <- 1 ate totimpar faca
+      escreva(impares[c], ", ")
+   fimpara
+fimalgoritmo

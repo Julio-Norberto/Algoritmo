@@ -1,0 +1,121 @@
+algoritmo "exercicio_de_matriz"
+
+var
+m: vetor [1..10,1..10] de inteiro
+c, l, aux1, aux2, somadp, subds, multdp, totpar, totnum, totimpar, maior, menor: inteiro
+
+procedimento mat()
+inicio
+ para l de 1 ate 10 faca
+   escreval("")
+   para c de 1 ate 10 faca
+      escreva(" ", m[l,c])
+   fimpara
+ fimpara
+escreval("")
+fimprocedimento
+
+inicio
+somadp <- 0
+subds <- 0
+totpar <- 0
+totimpar <- 0
+menor <- 99999
+maior <- 0
+multdp <- 1
+
+//coletando os números da matriz
+para l de 1 ate 10 faca
+   para c de 1 ate 10 faca
+      escreval("Digite um valor: ")
+      leia(m[l,c])
+      //soma da diagonal principal
+      se (l = c) entao
+         somadp <- somadp + m[l,c]
+      fimse
+      //subtração da diagonal secundária
+      se (l + c = 10 + 1) entao
+         subds <- subds - m[l,c]
+      fimse
+      //multiplicação dos números acima da diagonal principal
+      se (c > l) entao
+         multdp <- multdp * m[l,c]
+      senao
+         aux2 <- 1
+      fimse
+      //total de pares em colunas impares
+      se (c mod 2 <> 0) e (m[l,c] mod 2 = 0) entao
+         totpar <- totpar + 1
+      fimse
+      //total de impares em linhas pares
+      se (l mod 2 = 0) e (m[l,c] <> 0) entao
+         totimpar <- totimpar + 1
+      fimse
+      //maior número
+      se (m[l,c] > maior) então
+         maior <- m[l,c]
+      fimse
+      //menor número
+      se (m[l,c] < menor) entao
+         menor <- m[l,c]
+      fimse
+   fimpara
+fimpara
+
+//exibindo a matriz
+escreval("--- MATRIZ INICIAL ---")
+mat()
+escreval("")
+
+//troca da linha 2 com a linha 8
+para l de 1 ate 10 faca
+   aux1 <- m[2,l]
+   m[2,l] <- m[8,l]
+   m[8,l] <- aux1
+fimpara
+escreval("")
+
+//exibindo nova matriz
+escreval("---MATRIZ COM LINHAS 8 E 2 TROCADAS---")
+mat()
+
+//voltando a matriz para os valores originais
+para l de 1 ate 10 faca
+   aux1 <- m[8,l]
+   m[8,l] <- m[2,l]
+   m[2,l] <- aux1
+fimpara
+escreval("")
+
+//troca da coluna 4 com a 10
+para l de 1 ate 10 faca
+   aux1 <- m[l,4]
+   m[l,4] <- m[l,10]
+   m[l,10] <- aux1
+fimpara
+escreval("")
+
+//exibindo nova matriz
+escreval("---MATRIZ COM COLUNAS 4 E 10 TROCADAS---")
+mat()
+
+escreval("")
+escreval("A soma da diagonal principal é: ", somadp)
+escreval("")
+escreval("A subtração da diagonal secundária é: ", subds)
+escreval("")
+escreval("A multiplicação dos números acima da diagonal principal é: ", multdp)
+escreval("")
+escreval("A quantidade de números pares em colunas impares é: ", totpar)
+escreval("")
+escreval("A quantidade de números impares nas linhas pares é de: ", totimpar)
+escreval("")
+escreval("A média de números pares é de: ", totpar / 100)
+escreval("")
+escreval("A média de números impares é de: ", totimpar / 100)
+escreval("")
+escreval("O maior número é: ", maior)
+escreval("")
+escreval("O menor número é: ", menor)
+fimalgoritmo
+

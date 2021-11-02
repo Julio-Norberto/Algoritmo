@@ -1,0 +1,47 @@
+algoritmo "altura_e_sexo"
+var
+   altura, media_altura, mediaturma, mediafinalM, mediafinalT, totturma: real
+   sexo: caractere
+   totmulher, maioraltura, menoraltura: real
+   c: inteiro
+   
+procedimento inicial
+inicio
+  escreval("==========================================")
+  escreval(" ANALISADOR DE ALTURA (VAI ENTENDER KKK)")
+  escreval("==========================================")
+fimprocedimento
+inicio
+  totturma <- 0
+  mediaturma <- 0
+  media_altura <- 0
+  maioraltura <- 0
+  menoraltura <- 2
+  para c <- 1 ate 50 faca
+    inicial ()
+    escreva("Informe o sexo (M/F): ")
+    leia(sexo)
+    escreva("Informe a altura: ")
+    leia(altura)
+    totturma <- totturma + 1
+    mediaturma <- mediaturma + altura
+    se (altura > maioraltura) entao
+     maioraltura <- altura
+    fimse
+    se (sexo = "f") entao
+       totmulher <- totmulher + 1
+       media_altura <- media_altura + altura
+    fimse
+    se (altura < menoraltura) entao
+       menoraltura <- altura
+    fimse
+  fimpara
+  limpatela
+  mediafinalM <- media_altura / totmulher
+  mediafinalt <- mediaturma / totturma
+  escreval("A média da altura das mulheres é de: ", mediafinalM:4:2, " metros")
+  escreval("A média de altura da turma inteira é de: ", mediafinalt:4:2, " metros")
+  escreval("A maior altura registrada foi de: ", maioraltura, " metros")
+  escreval("E a menor foi: ", menoraltura, " metros")
+
+fimalgoritmo

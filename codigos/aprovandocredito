@@ -1,0 +1,35 @@
+algoritmo "avaliacao_de_credito"
+var
+  saldo, credito: real
+  
+procedimento apresentacao
+inicio
+  escreval("=====================")
+  escreval("  CRÉDITO ESPECIAL   ")
+  escreval("=====================")
+fimprocedimento
+
+inicio
+  apresentacao ()
+  escreva("informe seu saldo (R$): ")
+  leia(saldo)
+  limpatela
+  se (saldo <= 500) entao
+     escreval("desculpe, não há crédito disponível para você no momento.")
+  senao
+     se (saldo > 500) e (saldo <= 1000) então
+        credito <- saldo * 20 / 100
+        escreval("Você possui crédito disponível no valor de: ", credito, "R$")
+     senao
+        se (saldo > 1000) e (saldo <= 2000) entao
+           credito <- saldo * 30 / 100
+           escreval("Você possui crédito disponível no valor de: ", credito, "R$")
+        senao
+           se (saldo > 2000) entao
+              credito <- saldo * 40 / 100
+              escreval("Você possui crédito disponível no valor de: ", credito, "R$")
+           fimse
+        fimse
+     fimse
+  fimse
+fimalgoritmo
